@@ -10,7 +10,7 @@ run "mvn clean package" with jdk7+, it will generate a zip file in target, extra
 
 the directory layout would be:
 ```
-$KETTLE_HOME/plugins/kettle-redis-plugin-0.0.1
+$KETTLE_HOME/plugins/kettle-redis-plugin-$VERSION
   kettle-redis-plugin-$VERSION.jar
   lib
 ```
