@@ -18,7 +18,8 @@ $KETTLE_HOME/plugins/kettle-redis-plugin-$VERSION
 usage
 ====================
 
-Open the output dialog, type in the command and the connection url, then the columns will be automatically appended and generate the command to execute.
+Open the output dialog, type in the command and the connection url, then the columns will be automatically
+ appended as arguments, this plugin will generate the command and send to redis.
 
 ![](./docs/config.png)
 
