@@ -1,25 +1,28 @@
-pdi-redis-plugin
+Pentaho Kettle Redis Plugin
 ====================
 
 This is an output step plugin to write data to redis cluster.
 
-install
+Installation
 ====================
 
-run "mvn clean package" with jdk7+, it will generate a zip file in target, extract it to kettle/plugins.
 
-the directory layout would be:
+Download the binary zip file from https://github.com/DanielYWoo/pentaho-di-redis-plugin/releases and unzip it to kettle/plugins. You can also build the zip with maven command "mvn clean package" with jdk7+, it will generate the distribution zip file in $PROJECT/target.
+
+The plugin directory layout would be:
 ```
 $KETTLE_HOME/plugins/kettle-redis-plugin-$VERSION
   kettle-redis-plugin-$VERSION.jar
   lib
 ```
 
-usage
+If you upgrade the plugin please manually remove the old version.
+
+Usage
 ====================
 
-Open the output dialog, type in the command and the connection url, then the columns will be automatically
- appended as arguments, this plugin will generate the command and send to redis.
+Double click the step dialog in spoon, type in the command and the connection url, then the columns will be automatically
+ appended as command arguments, redis command will be generated and sent.
 
 ![](./docs/config.png)
 
@@ -27,7 +30,7 @@ Open the output dialog, type in the command and the connection url, then the col
 
  e,g. set, then "set (column1 as key) (column2 as value)" will be executed.
 
-You probably need a "select values" step before the redis output step to generate columns you want.
+You probably need a "select values" step before the redis output step to generate columns (arguments) you want.
 
 ![](./docs/pdi-redis-flow.png)
 
