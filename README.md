@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/DanielYWoo/pentaho-di-redis-plugin.svg?branch=master)](https://travis-ci.org/DanielYWoo/pentaho-di-redis-plugin)
+
 Pentaho Kettle Redis Plugin
 ====================
 
