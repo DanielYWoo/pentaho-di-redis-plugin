@@ -1,7 +1,19 @@
 pdi-redis-plugin
 ====================
 
-This is an output step plugin to write data to redis.
+This is an output step plugin to write data to redis. This is tested with Pentaho Kettle 6.1, should work with 7+.
+
+install
+====================
+
+run "mvn clean package" with jdk7+, it will generate a zip file in target, extract it to kettle/plugins.
+
+the directory layout would be:
+```
+$KETTLE_HOME/plugins/kettle-redis-plugin-0.0.1
+  kettle-redis-plugin-$VERSION.jar
+  lib
+```
 
 usage
 ====================
