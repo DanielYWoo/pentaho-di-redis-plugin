@@ -68,7 +68,6 @@ public class RedisOutputStepMeta extends BaseStepMeta implements StepMetaInterfa
 	 */
 	@SuppressWarnings("unused")
     public StepDialogInterface getDialog(Shell shell, StepMetaInterface meta, TransMeta transMeta, String name) {
-        System.out.println("**********************get dialog");
         return new RedisOutputStepDialog(shell, meta, transMeta, name);
 	}
 

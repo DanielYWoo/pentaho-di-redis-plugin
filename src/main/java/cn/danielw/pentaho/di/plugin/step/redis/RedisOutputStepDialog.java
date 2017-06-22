@@ -59,6 +59,7 @@ public class RedisOutputStepDialog extends BaseStepDialog implements StepDialogI
 	 * The open() method must return the name of the step after the user has confirmed the dialog,
 	 * or null if the user cancelled the dialog.
 	 */
+	@Override
 	public String open() {
 
 		// store some convenient SWT variables 
@@ -69,7 +70,7 @@ public class RedisOutputStepDialog extends BaseStepDialog implements StepDialogI
 		shell = new Shell(parent, SWT.DIALOG_TRIM | SWT.RESIZE | SWT.MIN | SWT.MAX);
 		props.setLook(shell);
 		setShellImage(shell, meta);
-		
+
 		// Save the value of the changed flag on the meta object. If the user cancels
 		// the dialog, it will be restored to this saved value.
 		// The "changed" variable is inherited from BaseStepDialog
@@ -205,7 +206,9 @@ public class RedisOutputStepDialog extends BaseStepDialog implements StepDialogI
 		
 		// Set/Restore the dialog size based on last position on screen
 		// The setSize() method is inherited from BaseStepDialog
-		setSize();
+
+        shell.setMinimumSize(400, 60);
+//		setSize();
 
 		// populate the dialog with the values from the meta object
 		populateDialog();
