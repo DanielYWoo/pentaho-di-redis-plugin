@@ -44,7 +44,8 @@ import java.util.List;
 		i18nPackageName="cn.danielw.pentaho.di.plugin.step.redis",
 		name="RedisOutputStep.Name",
 		description="RedisOutputStep.Description",
-		categoryDescription="i18n:org.pentaho.di.trans.step:BaseStep.Category.Output"
+		categoryDescription="i18n:org.pentaho.di.trans.step:BaseStep.Category.Output",
+        documentationUrl = "https://github.com/DanielYWoo/pentaho-di-redis-plugin"
 )
 public class RedisOutputStepMeta extends BaseStepMeta implements StepMetaInterface, Cloneable {
 

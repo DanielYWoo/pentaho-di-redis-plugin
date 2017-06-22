@@ -20,7 +20,7 @@ usage
 
 Open the output dialog, type in the command and the connection url, then the columns will be automatically appended and generate the command to execute.
 
-![](docs/config.jpeg?raw=true)
+![](docs/config.png?raw=true)
 
  e,g. zadd, then "zadd (column1 as key) (column2 as score) (column3 as member)" will be executed.
 
@@ -28,7 +28,7 @@ Open the output dialog, type in the command and the connection url, then the col
 
 You probably need a "select values" step before the redis output step to generate columns you want.
 
-![](docs/pdi-redis-flow.jpeg?raw=true)
+![](docs/pdi-redis-flow.png?raw=true)
 
 others
 ====================

@@ -165,13 +165,17 @@ public class RedisOutputStepDialog extends BaseStepDialog implements StepDialogI
             textRedisUrl.setLayoutData(formData);
         }
 
-		// OK and cancel buttons
+
+
+
+        // OK and cancel buttons
 		wOK = new Button(shell, SWT.PUSH);
 		wOK.setText(BaseMessages.getString(PKG, "System.Button.OK")); 
 		wCancel = new Button(shell, SWT.PUSH);
-		wCancel.setText(BaseMessages.getString(PKG, "System.Button.Cancel")); 
+		wCancel.setText(BaseMessages.getString(PKG, "System.Button.Cancel"));
 
-		BaseStepDialog.positionBottomButtons(shell, new Button[] { wOK, wCancel }, margin, textRedisUrl);
+        setButtonPositions( new Button[] { wOK, wCancel }, margin, null );
+		// BaseStepDialog.positionBottomButtons(shell, new Button[] { wOK, wCancel }, margin, textRedisUrl);
 
 		// Add listeners for cancel and OK
 		lsCancel = new Listener() {
@@ -207,8 +211,7 @@ public class RedisOutputStepDialog extends BaseStepDialog implements StepDialogI
 		// Set/Restore the dialog size based on last position on screen
 		// The setSize() method is inherited from BaseStepDialog
 
-        shell.setMinimumSize(400, 60);
-//		setSize();
+		setSize();
 
 		// populate the dialog with the values from the meta object
 		populateDialog();
