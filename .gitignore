@@ -1,0 +1,30 @@
+.gradle
+**/build/
+*.class
+*.jar
+*.war
+
+# Mac OSX
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# IDEA
+*.iml
+*.ipr
+*.iws
+.idea
+*.log
+*.out
+pom.xml.versionsBackup
+
+#maven
+target/
+
+#eclipse
+.project
+.workspace
+.settings
+.classpath
+.metadata
