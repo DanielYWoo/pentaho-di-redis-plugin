@@ -23,7 +23,8 @@ If you upgrade the plugin please manually remove the old version.
 Usage
 ====================
 
-Double click the step dialog in spoon, type in the command and the connection url, then the columns will be automatically
+Double click the step dialog in spoon, type in the command and the connection url 
+(you can use a variable from kettle.properties), then the columns will be automatically
  appended as command arguments, redis command will be generated and sent.
 
 ![](./docs/config.png)

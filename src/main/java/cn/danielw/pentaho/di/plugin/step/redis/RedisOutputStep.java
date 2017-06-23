@@ -8,7 +8,6 @@ import org.pentaho.di.trans.step.*;
 import redis.clients.jedis.HostAndPort;
 import redis.clients.jedis.JedisCluster;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -43,7 +42,8 @@ public class RedisOutputStep extends BaseStep implements StepInterface {
 		// Casting to step-specific implementation classes is safe
 		RedisOutputStepMeta meta = (RedisOutputStepMeta) smi;
 		RedisOutputStepData data = (RedisOutputStepData) sdi;
-        logBasic("creating redis session factory, addresses=" + meta.getUrl());
+        String url = environmentSubstitute(meta.getUrl());
+        logBasic("creating redis session factory, addresses=" + url);
         String[] redisNodes = meta.getUrl().split(",");
 
         Set<HostAndPort> jedisClusterNodes = new HashSet<>();
