@@ -44,14 +44,19 @@ public class RedisOutputStep extends BaseStep implements StepInterface {
 		RedisOutputStepData data = (RedisOutputStepData) sdi;
         String url = environmentSubstitute(meta.getUrl());
         logBasic("creating redis session factory, addresses=" + url);
-        String[] redisNodes = meta.getUrl().split(",");
-
-        Set<HostAndPort> jedisClusterNodes = new HashSet<>();
-        for (String redisNode: redisNodes) {
-            String[] config = redisNode.split(":");
-            jedisClusterNodes.add(new HostAndPort(config[0], Integer.parseInt(config[1])));
-        }
-
+        if (url == null || url.isEmpty()) {
+        	throw new IllegalArgumentException("redis cluster url set configured");
+		}
+		String[] redisNodes = url.split(",");
+		Set<HostAndPort> jedisClusterNodes = new HashSet<>();
+		try {
+            for (String redisNode: redisNodes) {
+                String[] config = redisNode.split(":");
+                jedisClusterNodes.add(new HostAndPort(config[0], Integer.parseInt(config[1])));
+            }
+		} catch (IllegalArgumentException ex) {
+			throw new IllegalArgumentException("redis cluster url not configured correctly");
+		}
         client = new JedisCluster(jedisClusterNodes, REDIS_TIMEOUT, new GenericObjectPoolConfig());
 		return super.init(meta, data);
 	}	
