@@ -98,13 +98,12 @@
     <repositories>
         <repository>
             <id>pentaho-releases</id>
-            <url>http://repository.pentaho.org/artifactory/repo/ </url>
+            <url>https://nexus.pentaho.org/repository/proxy-pentaho-public-release-group</url>
         </repository>
         <repository>
-            <id>ibiblio</id>
-            <url>http://mirrors.ibiblio.org/maven2/ </url>
-        </repository>
-
+            <id>central</id>
+            <url>https://repo1.maven.org/maven2/</url>
+          </repository>
     </repositories>
 
 	<scm>
