@@ -3,7 +3,7 @@
 Pentaho Kettle Redis Plugin
 ====================
 
-This is an output step plugin to write data to redis cluster.
+This is an output step plugin to write data to a Redis cluster.
 
 Installation
 ====================
